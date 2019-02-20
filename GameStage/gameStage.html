@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game Stage</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<!-- Latest Fontawesome 5 -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+	<link rel="stylesheet" type="text/css" href="../style.css">
+
+	<script type="text/javascript" src="../sessionHelper.js"></script>
+	<script type="text/javascript" src="../ajaxHelper.js"></script>
+	<script type="text/javascript" src="../logoutHelper.js"></script>
+	<!-- <script type="text/javascript" src="../authenticatePlayer.js"></script> -->
+</head>
+<body>
+	<div class="container-fluid bg-secondary-color">
+        <div class="nav-elm nav-elm-img">
+            <img id="playerImg1" src="unknown.svg" alt="player picture" style="height: 40px">
+        </div>
+        <div class="nav-elm nav-elm-label">
+            <label id="playerName1" class="txt-inverse">Player Name</label>
+        </div>
+        <div class="pull-right">
+            <div class="nav-elm nav-elm-label">
+                <label class="txt-inverse">
+                    <label id="playerPoints" >0</label>
+                    <span class="fas fa-coins"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+    	<div class="alert alert-danger text-center v-md-space">
+		  	Time Left <label id="timer">7</label>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="inline-3">
+				<div class="container-fluid">
+					<img id="playerShape" class="center-block" src="https://res.cloudinary.com/black-pearls/image/upload/v1550398551/RPS/Players/unknown.svg" width="60px" height="60px">
+				</div>
+				<div class="center-block text-center v-md-space">
+				    <img id="playerImg2" src="https://res.cloudinary.com/black-pearls/image/upload/v1550398551/RPS/Players/unknown.svg" style="width:25px">
+					<label id="playerName2">Player</label>
+				</div>	
+			</div>
+			<div class="inline-3 txt-inverse">
+				<img id="opponentImg" class="center-block" src="https://res.cloudinary.com/black-pearls/image/upload/v1550638511/RPS/versus.svg" width="40px" height="40px">
+				<p>versus</p>
+				<p>versus</p>
+			</div>
+			<div class="inline-3">
+				<div class="container-fluid">
+					<img id="opponentShape" class="center-block" src="https://res.cloudinary.com/black-pearls/image/upload/v1550398551/RPS/Players/unknown.svg" width="60px" height="60px">
+				</div>
+				<div class="center-block text-center v-md-space">
+				    <img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550398551/RPS/Players/unknown.svg" style="width:25px">
+					<label id="playerName">Player</label>
+				</div>		
+			</div>
+		</div>
+
+		<div class="panel panel-default text-center v-md-space">
+			<div class="panel-heading">
+				<label class="txt-inverse">Choose Your Shape</label>
+			</div>
+			<div class="panel-body">
+				<div class="inline-3">
+					<button id="btnPaper" class="btn btn-danger center-block">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Paper.svg" width="30px" height="30px">
+					</button>
+					<label class="txt-inverse">Paper</label>
+				</div>
+				<div class="inline-3">
+					<button id="btnScissors" class="btn btn-primary center-block">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Scissors.svg" width="30px" height="30px">
+					</button>
+					<label class="txt-inverse">Scissors</label>
+				</div>
+				<div class="inline-3">
+					<button id="btnRock" class="btn btn-success center-block">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Rock.svg" width="30px" height="30px">
+					</button>
+					<label class="txt-inverse">Rock</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="gameStage.js"></script>
+</body>
+</html>
