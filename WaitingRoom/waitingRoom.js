@@ -18,11 +18,6 @@ $(document).ready(function(){
 
 });
 
-$(window).on('beforeunload', function(){
-    if(!isRedirected)
-        unauthenticate(); // sessionHelper.js
-});
-
 function renderOpponentData(opponent)
 {
 	$('#opponentName').text(opponent.username);

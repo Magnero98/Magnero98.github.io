@@ -27,11 +27,6 @@ $(document).ready(function(){
 
 });
 
-$(window).on('beforeunload', function(){
-    //if(!isRedirected)
-        //unauthenticate(); // sessionHelper.js
-});
-
 function startTimeCounter()
 {
 	counter--;
@@ -134,11 +129,11 @@ function renderOpponentShape(shapeNumber)
 	var opponentShapeImg = $("#opponentShape");
 
 	if(shapeNumber == Shapes.Rock)
-		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Rock.svg");
+		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealRock.svg");
 	else if(shapeNumber == Shapes.Paper)
-		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Paper.svg");
+		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealPaper.svg");
 	else if(shapeNumber == Shapes.Scissors)
-		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Scissors.svg");
+		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealScissors.svg");
 }
 
 function chooseShape(shapeNumber)
@@ -155,11 +150,11 @@ function renderPlayerShape(shapeNumber)
 	var playerShapeImg = $("#playerShape");
 
 	if(shapeNumber == Shapes.Rock)
-		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Rock.svg");
+		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealRock.svg");
 	else if(shapeNumber == Shapes.Paper)
-		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Paper.svg");
+		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealPaper.svg");
 	else if(shapeNumber == Shapes.Scissors)
-		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Scissors.svg");
+		playerShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealScissors.svg");
 }
 
 function setPlayerShape()

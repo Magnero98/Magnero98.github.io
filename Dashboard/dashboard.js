@@ -22,11 +22,6 @@ $(document).ready(function(){
 
 });
 
-$(window).on('beforeunload', function(){
-    if(!isRedirected)
-        unauthenticate(); // sessionHelper.js
-});
-
 function getRoomList()
 {
     $('.fa-sync-alt').toggleClass("fa-pulse");
