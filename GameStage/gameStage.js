@@ -126,7 +126,7 @@ function resetRoomReadyStatus()
 function onResetRoomReadyStatus(data)
 {
 	isRedirected = true;
-	window.location = "../WaitingRoom/WaitingRoom.html";
+	window.location = "../WaitingRoom/waitingRoom.html";
 }
 
 function renderOpponentShape(shapeNumber)
