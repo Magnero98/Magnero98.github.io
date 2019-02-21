@@ -1,7 +1,7 @@
 var Shapes = Object.freeze({"NotSet":0, "Rock":1, "Paper":2, "Scissors":3});
 var timer = setInterval(startTimeCounter, 1000);
 
-var counter = 7;
+var counter = 11;
 var playerHasChooseShape = false;
 var shapeIsSet = false;
 var shape = Shapes.NotSet;
