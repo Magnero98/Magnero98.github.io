@@ -106,7 +106,11 @@ function onJoinRoom()
 
 function getPlayerData()
 {
-    if(getAuthPlayer() != null) return;
+    if(getAuthPlayer() != null)
+    {
+        renderPlayerData(getAuthPlayer());
+        return;
+    }
     
     var url = "https://rps-online.000webhostapp.com/api/player";
     var callback = renderPlayerData; // sessionHelper.js

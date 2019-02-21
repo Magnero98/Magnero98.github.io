@@ -91,14 +91,18 @@ function onGetTheGameWinner(data)
 			{
 				congratsTheWinnerAnimationStart(1);
 				var player = getAuthPlayer();
-				player.points += 10;
+				var currPoints = parseInt(player.points)
+				currPoints += 10;
+				player.points = currPoints;
 				setAuthPlayer(player);
 			}
 			else if(data['winnerShape'] != shape)
 			{
 				congratsTheWinnerAnimationStart(-1);
 				var player = getAuthPlayer();
-				player.points -= 10;
+				var currPoints = parseInt(player.points)
+				currPoints -= 10;
+				player.points = currPoints;
 				setAuthPlayer(player);
 			}
 	    }, 1500);
