@@ -68,6 +68,8 @@ function onGetRoomList(data)
 
 function createNewRoom()
 {
+    createRoomAnimationStart();
+
     var url = "http://localhost:8000/api/rooms/create";
     var data = $('#createRoomForm').serialize();
     var callback = onCreateRoom;
@@ -89,6 +91,8 @@ function joinRoom(roomId, firstJoin)
 {
     if(!firstJoin)
         setRoomId(roomId); // sessionHelper.js
+
+    joinRoomAnimationStart();
 
     var url = "http://localhost:8000/api/rooms/join?roomId=" + roomId;
     var callback = onJoinRoom;

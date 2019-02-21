@@ -10,7 +10,8 @@ var shape = Shapes.NotSet;
 $(document).ready(function(){
     
 	renderPlayerData();
-	renderOpponentData();
+	//renderOpponentData();
+	startGameAnimationStart();
 
     $("#btnPaper").click(function(){
         chooseShape(Shapes.Paper);
@@ -59,6 +60,8 @@ function getTheGameWinner()
 		return;
 	}
 
+	getGameWinnerAnimationStart();
+
 	var url = "http://localhost:8000/api/games/winner?roomId=" + getRoomId()
 				+ "&shape=" + shape;
     var callback = onGetTheGameWinner;
@@ -71,6 +74,7 @@ function getTheGameWinner()
 
 function onGetTheGameWinner(data)
 {
+	endAnimation();
 	if('error' in data)
 	{
 		setTimeout(getTheGameWinner, 1000);
@@ -85,14 +89,14 @@ function onGetTheGameWinner(data)
 
 		setTimeout(function(){
 	    	if(data['winnerShape'] == Shapes.NotSet)
-				alert('Draw');
+				congratsTheWinnerAnimationStart(0);
 			else if(data['winnerShape'] == shape)
-				alert('You Win');
+				congratsTheWinnerAnimationStart(1);
 			else if(data['winnerShape'] != shape)
-				alert('Opponent Win');
+				congratsTheWinnerAnimationStart(-1);
 	    }, 1500);
 
-		resetRoomReadyStatus();
+		setTimeout(resetRoomReadyStatus, 3500);
 	}
 }
 

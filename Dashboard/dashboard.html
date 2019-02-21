@@ -26,10 +26,16 @@
 	<script type="text/javascript" src="../authenticatePlayer.js"></script>
 </head>
 <body>
+    <div id="intermezzo" class="intermezzo" style="display: none">
+        <div class="intermezzo-body text-center">
+            <h1 id="intermezzo-text" class="intermezzo-text txt"></h1>
+            <h2 id="intermezzo-icon"></h2>
+        </div>
+    </div>
 
     <div class="container-fluid bg-secondary-color">
         <div class="nav-elm nav-elm-img">
-            <img id="playerImg" src="unknown.svg" alt="player picture" style="height: 40px">
+            <img id="playerImg" src="" alt="player picture" style="height: 40px">
         </div>
         <div class="nav-elm nav-elm-label">
             <label id="playerName" class="txt-inverse">Player Name</label>
@@ -97,6 +103,7 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="animation.js"></script>
 	<script type="text/javascript" src="dashboard.js"></script>
 </body>
 </html>

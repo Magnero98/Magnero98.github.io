@@ -5,7 +5,7 @@
 $(document).ready(function(){
     
     renderPlayerData();
-    //searchingForOpponent();
+    searchingForOpponent();
 
     $('#readyBtn').click(function(){
     	setPlayerReady() // RoomState.js

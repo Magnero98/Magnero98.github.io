@@ -23,12 +23,19 @@
 	<script type="text/javascript" src="../sessionHelper.js"></script>
 	<script type="text/javascript" src="../ajaxHelper.js"></script>
 	<script type="text/javascript" src="../logoutHelper.js"></script>
-	<!-- <script type="text/javascript" src="../authenticatePlayer.js"></script> -->
+	<script type="text/javascript" src="../authenticatePlayer.js"></script>
 </head>
 <body>
+	<div id="intermezzo" class="intermezzo">
+		<div class="intermezzo-body text-center">
+			<h1 id="intermezzo-text" class="intermezzo-text txt">Choosing The Winner</h1>
+			<h2 id="intermezzo-icon"></h2>
+		</div>
+	</div>
+
 	<div class="container-fluid bg-secondary-color">
         <div class="nav-elm nav-elm-img">
-            <img id="playerImg1" src="unknown.svg" alt="player picture" style="height: 40px">
+            <img id="playerImg1" src="" alt="player picture" style="height: 40px">
         </div>
         <div class="nav-elm nav-elm-label">
             <label id="playerName1" class="txt-inverse">Player Name</label>
@@ -80,27 +87,28 @@
 			</div>
 			<div class="panel-body">
 				<div class="inline-3">
-					<button id="btnPaper" class="btn btn-danger center-block">
-						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Paper.svg" width="30px" height="30px">
+					<button id="btnRock" class="btn btn-danger round-btn center-block">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550717482/RPS/Shapes/Rock.svg" width="30px" height="30px">
+					</button>
+					<label class="txt-inverse">Rock</label>
+				</div>
+				<div class="inline-3">
+					<button id="btnPaper" class="btn btn-success center-block">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550717475/RPS/Shapes/Paper.svg" width="30px" height="30px">
 					</button>
 					<label class="txt-inverse">Paper</label>
 				</div>
 				<div class="inline-3">
 					<button id="btnScissors" class="btn btn-primary center-block">
-						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Scissors.svg" width="30px" height="30px">
+						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550717489/RPS/Shapes/Scissors.svg" width="30px" height="30px">
 					</button>
 					<label class="txt-inverse">Scissors</label>
-				</div>
-				<div class="inline-3">
-					<button id="btnRock" class="btn btn-success center-block">
-						<img id="playerImg" src="https://res.cloudinary.com/black-pearls/image/upload/v1550543098/RPS/Shapes/Rock.svg" width="30px" height="30px">
-					</button>
-					<label class="txt-inverse">Rock</label>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	<script type="text/javascript" src="animation.js"></script>
 	<script type="text/javascript" src="gameStage.js"></script>
 </body>
 </html>
