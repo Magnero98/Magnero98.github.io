@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 function register()
 {
-    var url = "http://localhost:8000/api/register";
+    var url = "https://rps-online.000webhostapp.com/api/register";
     var data = $('#registerForm').serialize();
     var callback = onRegister;
 

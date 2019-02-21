@@ -62,7 +62,7 @@ function getTheGameWinner()
 
 	getGameWinnerAnimationStart();
 
-	var url = "http://localhost:8000/api/games/winner?roomId=" + getRoomId()
+	var url = "https://rps-online.000webhostapp.com/api/games/winner?roomId=" + getRoomId()
 				+ "&shape=" + shape;
     var callback = onGetTheGameWinner;
 
@@ -89,11 +89,23 @@ function onGetTheGameWinner(data)
 
 		setTimeout(function(){
 	    	if(data['winnerShape'] == Shapes.NotSet)
+	    	{
 				congratsTheWinnerAnimationStart(0);
+	    	}
 			else if(data['winnerShape'] == shape)
+			{
 				congratsTheWinnerAnimationStart(1);
+				var player = getAuthPlayer();
+				player.points += 10;
+				setAuthPlayer(player);
+			}
 			else if(data['winnerShape'] != shape)
+			{
 				congratsTheWinnerAnimationStart(-1);
+				var player = getAuthPlayer();
+				player.points -= 10;
+				setAuthPlayer(player);
+			}
 	    }, 1500);
 
 		setTimeout(resetRoomReadyStatus, 3500);
@@ -102,7 +114,7 @@ function onGetTheGameWinner(data)
 
 function resetRoomReadyStatus()
 {
-	var url = "http://localhost:8000/api/rooms/ready/reset?roomId=" + getRoomId();
+	var url = "https://rps-online.000webhostapp.com/api/rooms/ready/reset?roomId=" + getRoomId();
     var callback = onResetRoomReadyStatus;
 
     if(isTokenSet()) // sessionHelper.js
@@ -152,7 +164,7 @@ function renderPlayerShape(shapeNumber)
 
 function setPlayerShape()
 {
-	var url = "http://localhost:8000/api/games/set/shape?roomId=" + getRoomId()
+	var url = "https://rps-online.000webhostapp.com/api/games/set/shape?roomId=" + getRoomId()
 				+ "&shape=" + shape;
     var callback = onSetPlayerShape;
 

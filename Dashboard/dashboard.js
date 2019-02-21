@@ -31,7 +31,7 @@ function getRoomList()
 {
     $('.fa-sync-alt').toggleClass("fa-pulse");
 
-    var url = "http://localhost:8000/api/rooms";
+    var url = "https://rps-online.000webhostapp.com/api/rooms";
     var callback = onGetRoomList;
 
     if(isTokenSet()) // sessionHelper.js
@@ -70,7 +70,7 @@ function createNewRoom()
 {
     createRoomAnimationStart();
 
-    var url = "http://localhost:8000/api/rooms/create";
+    var url = "https://rps-online.000webhostapp.com/api/rooms/create";
     var data = $('#createRoomForm').serialize();
     var callback = onCreateRoom;
 
@@ -94,7 +94,7 @@ function joinRoom(roomId, firstJoin)
 
     joinRoomAnimationStart();
 
-    var url = "http://localhost:8000/api/rooms/join?roomId=" + roomId;
+    var url = "https://rps-online.000webhostapp.com/api/rooms/join?roomId=" + roomId;
     var callback = onJoinRoom;
 
     if(isTokenSet()) // sessionHelper.js
@@ -113,7 +113,7 @@ function getPlayerData()
 {
     if(getAuthPlayer() != null) return;
     
-    var url = "http://localhost:8000/api/player";
+    var url = "https://rps-online.000webhostapp.com/api/player";
     var callback = renderPlayerData; // sessionHelper.js
 
     if(isTokenSet()) // sessionHelper.js

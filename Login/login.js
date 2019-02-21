@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 function login()
 {
-    var url = "http://localhost:8000/api/login";
+    var url = "https://rps-online.000webhostapp.com/api/login";
     var data = $('#loginForm').serialize();
     var callback = onLogin;
 

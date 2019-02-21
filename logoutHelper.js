@@ -1,6 +1,6 @@
 function logout()
 {
-    var url = "http://localhost:8000/api/logout";
+    var url = "https://rps-online.000webhostapp.com/api/logout";
     var callback = onLogout;
 
     if(isTokenSet()) // sessionHelper.js

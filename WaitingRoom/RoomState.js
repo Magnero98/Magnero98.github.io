@@ -23,7 +23,7 @@ function searchingForOpponent()
 function getTotalPlayerInRoom()
 {
 	console.log("searching");
-	var url = "http://localhost:8000/api/players/total?roomId=" + getRoomId(); // sessionHelper.js
+	var url = "https://rps-online.000webhostapp.com/api/players/total?roomId=" + getRoomId(); // sessionHelper.js
     var callback = onGetTotalPlayer;
 
     if(isTokenSet()) // sessionHelper.js
@@ -61,7 +61,7 @@ function getOpponentData()
 		return;
 	}
 
-	var url = "http://localhost:8000/api/rooms/opponent?roomId=" + getRoomId();
+	var url = "https://rps-online.000webhostapp.com/api/rooms/opponent?roomId=" + getRoomId();
     var callback = onGetOpponentData; 
 
     if(isTokenSet()) // sessionHelper.js
@@ -105,7 +105,7 @@ function checkBothPlayerReadiness()
 		}
 	}
 
-	var url = "http://localhost:8000/api/rooms/data?roomId=" + getRoomId();
+	var url = "https://rps-online.000webhostapp.com/api/rooms/data?roomId=" + getRoomId();
     var callback = onCheckBothPlayerReadiness;
 
     if(isTokenSet()) // sessionHelper.js
@@ -148,7 +148,7 @@ function onCheckBothPlayerReadiness(data)
 
 function setPlayerReady()
 {
-	var url = "http://localhost:8000/api/rooms/player/ready?roomId=" + getRoomId();
+	var url = "https://rps-online.000webhostapp.com/api/rooms/player/ready?roomId=" + getRoomId();
     var callback = onSetPlayerReady;
 
     if(isTokenSet()) // sessionHelper.js
@@ -176,7 +176,7 @@ function onOpponentLeft()
 
 function exitGame()
 {
-	var url = "http://localhost:8000/api/rooms/left?roomId=" + getRoomId()
+	var url = "https://rps-online.000webhostapp.com/api/rooms/left?roomId=" + getRoomId()
 				+ "&playerId=" + getAuthPlayer().id;
     var callback = onKickedFromRoom;
 
@@ -188,7 +188,7 @@ function exitGame()
 
 function kickOpponent()
 {
-	var url = "http://localhost:8000/api/rooms/left?roomId=" + getRoomId()
+	var url = "https://rps-online.000webhostapp.com/api/rooms/left?roomId=" + getRoomId()
 				+ "&playerId=" + getGameOpponent().id;
     var callback = onOpponentLeft;
 
@@ -200,7 +200,7 @@ function kickOpponent()
 
 function deleteRoom()
 {
-	var url = "http://localhost:8000/api/rooms/delete?roomId=" + getRoomId();
+	var url = "https://rps-online.000webhostapp.com/api/rooms/delete?roomId=" + getRoomId();
     var callback = onKickedFromRoom;
 
     if(isTokenSet()) // sessionHelper.js
