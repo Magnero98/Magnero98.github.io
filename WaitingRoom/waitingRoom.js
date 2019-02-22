@@ -12,7 +12,6 @@ $(document).ready(function(){
     });
 
      $('#exitBtn').click(function(){
-    	isRedirected = true;
     	exitGame();
     });
 

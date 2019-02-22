@@ -100,7 +100,6 @@ function joinRoom(roomId, firstJoin)
 
 function onJoinRoom()
 {
-    isRedirected = true;
     window.location = "../WaitingRoom/waitingRoom.html";
 }
 

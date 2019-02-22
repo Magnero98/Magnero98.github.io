@@ -51,7 +51,7 @@ function getTheGameWinner()
 {
 	if(playerHasChooseShape && !shapeIsSet)
 	{
-		setTimeout(getTheGameWinner, 1000);
+		getTheGameWinner();
 		return;
 	}
 
@@ -64,7 +64,9 @@ function getTheGameWinner()
     if(isTokenSet()) // sessionHelper.js
         url += "&token=" + getToken();
 
-    sendGetMethod(url, callback); // ajaxHelper.js
+    setTimeout(function(){
+    	sendGetMethod(url, callback); // ajaxHelper.js
+    }, 1500);
 }
 
 function onGetTheGameWinner(data)
@@ -105,7 +107,7 @@ function onGetTheGameWinner(data)
 				player.points = currPoints;
 				setAuthPlayer(player);
 			}
-	    }, 2000);
+	    }, 2500);
 
 		setTimeout(resetRoomReadyStatus, 3500);
 	}
@@ -124,7 +126,6 @@ function resetRoomReadyStatus()
 
 function onResetRoomReadyStatus(data)
 {
-	isRedirected = true;
 	window.location = "../WaitingRoom/waitingRoom.html";
 }
 
