@@ -29,6 +29,7 @@ function register()
 
 function onRegister(data)
 {
+    alert(data['message']);
     if(!("error" in data))
     {
         authenticate(data['token']); // sessionHelper.js
