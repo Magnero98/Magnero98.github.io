@@ -105,7 +105,7 @@ function onGetTheGameWinner(data)
 				player.points = currPoints;
 				setAuthPlayer(player);
 			}
-	    }, 1500);
+	    }, 2000);
 
 		setTimeout(resetRoomReadyStatus, 3500);
 	}

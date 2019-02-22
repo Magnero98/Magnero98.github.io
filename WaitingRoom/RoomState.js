@@ -17,7 +17,7 @@ $(window).on('beforeunload', function(){
 function searchingForOpponent()
 {
 	$('#gameStatus').text("Searching For Opponent . . .");
-	getTotalPlayerInRoom();
+	setTimeout(getTotalPlayerInRoom, 2000);
 }
 
 function getTotalPlayerInRoom()
@@ -36,7 +36,7 @@ function onGetTotalPlayer(data)
 {
 	if(data['totalPlayer'] < 2)
 	{
-		getTotalPlayerInRoom();
+		setTimeout(getTotalPlayerInRoom, 2000);
 		return;
 	}
 	else
@@ -82,13 +82,12 @@ function checkBothPlayerReadiness()
 {
 	$('#gameStatus').text("Waiting For Players To Ready . . .");
 
-	if(checkReadyRequest > 7)
+	if(checkReadyRequest > 10)
 	{
 		checkReadyRequest = 0;
 		if(totalReady == 0)
 		{
 			alert('You Are Kicked From Room');
-			//kickOpponent();
 			exitGame();
 			return;
 		}
