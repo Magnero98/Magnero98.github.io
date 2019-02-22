@@ -10,7 +10,7 @@ var shape = Shapes.NotSet;
 $(document).ready(function(){
     
 	renderPlayerData();
-	//renderOpponentData();
+	renderOpponentData();
 	startGameAnimationStart();
 
     $("#btnPaper").click(function(){
