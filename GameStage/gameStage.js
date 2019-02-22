@@ -81,35 +81,36 @@ function onGetTheGameWinner(data)
 	{
 		$.each(data['playersShape'], function(key, value){
 	        if(value != getAuthPlayer().id) // sessionHelper.js
-	        	renderOpponentShape(key);
+	        	renderOpponentShape(key, data);
 	    });
 
-		setTimeout(function(){
-	    	if(data['winnerShape'] == Shapes.NotSet)
-	    	{
-				congratsTheWinnerAnimationStart(0);
-	    	}
-			else if(data['winnerShape'] == shape)
-			{
-				congratsTheWinnerAnimationStart(1);
-				var player = getAuthPlayer();
-				var currPoints = parseInt(player.points)
-				currPoints += 10;
-				player.points = currPoints;
-				setAuthPlayer(player);
-			}
-			else if(data['winnerShape'] != shape)
-			{
-				congratsTheWinnerAnimationStart(-1);
-				var player = getAuthPlayer();
-				var currPoints = parseInt(player.points)
-				currPoints -= 10;
-				player.points = currPoints;
-				setAuthPlayer(player);
-			}
-	    }, 2500);
-
 		setTimeout(resetRoomReadyStatus, 3500);
+	}
+}
+
+function congratulatePlayer(data)
+{
+	if(data['winnerShape'] == Shapes.NotSet)
+	{
+		congratsTheWinnerAnimationStart(0);
+	}
+	else if(data['winnerShape'] == shape)
+	{
+		congratsTheWinnerAnimationStart(1);
+		var player = getAuthPlayer();
+		var currPoints = parseInt(player.points)
+		currPoints += 10;
+		player.points = currPoints;
+		setAuthPlayer(player);
+	}
+	else if(data['winnerShape'] != shape)
+	{
+		congratsTheWinnerAnimationStart(-1);
+		var player = getAuthPlayer();
+		var currPoints = parseInt(player.points)
+		currPoints -= 10;
+		player.points = currPoints;
+		setAuthPlayer(player);
 	}
 }
 
@@ -129,7 +130,7 @@ function onResetRoomReadyStatus(data)
 	window.location = "../WaitingRoom/waitingRoom.html";
 }
 
-function renderOpponentShape(shapeNumber)
+function renderOpponentShape(shapeNumber, data)
 {
 	var opponentShapeImg = $("#opponentShape");
 
@@ -139,6 +140,11 @@ function renderOpponentShape(shapeNumber)
 		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealPaper.svg");
 	else if(shapeNumber == Shapes.Scissors)
 		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealScissors.svg");
+
+	setTimeout(function(){
+	    congratulatePlayer(data);
+    }, 1000);
+
 }
 
 function chooseShape(shapeNumber)
