@@ -22,7 +22,6 @@ function searchingForOpponent()
 
 function getTotalPlayerInRoom()
 {
-	console.log("searching");
 	var url = "https://rps-online.000webhostapp.com/api/players/total?roomId=" + getRoomId(); // sessionHelper.js
     var callback = onGetTotalPlayer;
 

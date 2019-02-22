@@ -31,7 +31,6 @@ function startTimeCounter()
 {
 	counter--;
 	$("#timer").text(counter);
-	console.log(counter);
 
 	if(counter == 0)
 	{
@@ -79,10 +78,20 @@ function onGetTheGameWinner(data)
 	}
 	else
 	{
-		$.each(data['playersShape'], function(key, value){
-	        if(value != getAuthPlayer().id) // sessionHelper.js
+		if(Object.keys(data['playersShape']).length  == 1)
+		{
+			$.each(data['playersShape'], function(key, value){
 	        	renderOpponentShape(key, data);
-	    });
+		    });
+		}
+		else
+		{
+			$.each(data['playersShape'], function(key, value){
+		        if(value != getAuthPlayer().id) // sessionHelper.js
+		        	renderOpponentShape(key, data);
+		    });
+		}
+		
 
 		setTimeout(resetRoomReadyStatus, 3500);
 	}
@@ -93,6 +102,11 @@ function congratulatePlayer(data)
 	if(data['winnerShape'] == Shapes.NotSet)
 	{
 		congratsTheWinnerAnimationStart(0);
+		var player = getAuthPlayer();
+		var currPoints = parseInt(player.points)
+		currPoints -= 10;
+		player.points = currPoints;
+		setAuthPlayer(player);
 	}
 	else if(data['winnerShape'] == shape)
 	{
@@ -141,9 +155,9 @@ function renderOpponentShape(shapeNumber, data)
 	else if(shapeNumber == Shapes.Scissors)
 		opponentShapeImg.attr("src", "https://res.cloudinary.com/black-pearls/image/upload/v1550737819/RPS/Shapes/RealScissors.svg");
 
-	setTimeout(function(){
+	//setTimeout(function(){
 	    congratulatePlayer(data);
-    }, 1000);
+    //}, 1000);
 
 }
 
